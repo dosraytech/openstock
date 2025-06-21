@@ -1,6 +1,6 @@
 import PocketBase from 'pocketbase';
 
-// Validate environment variables at startup
+// Validate environment variables at runtime
 function validateEnvironment() {
   const BASE_URL = process.env.BASE_URL;
 
@@ -23,9 +23,6 @@ function validateEnvironment() {
   }
 }
 
-// Validate environment on module load
-validateEnvironment();
-
 export interface AuthenticatedPocketBase {
   pb: PocketBase;
   userId: string;
@@ -36,6 +33,9 @@ export interface AuthenticatedPocketBase {
 export async function getAuthenticatedPocketBase(
   event: any
 ): Promise<AuthenticatedPocketBase> {
+  // Validate environment at runtime
+  validateEnvironment();
+
   // Get the authorization token from cookies
   const token = getCookie(event, 'pb_auth');
 
@@ -87,6 +87,12 @@ export async function getAuthenticatedPocketBase(
     user,
     isAdmin: user.admin || false,
   };
+}
+
+// Export a function to get PocketBase instance with validation
+export function getPocketBase() {
+  validateEnvironment();
+  return new PocketBase(process.env.BASE_URL);
 }
 
 export function handlePocketBaseError(error: any, defaultMessage: string) {

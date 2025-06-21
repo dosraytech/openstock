@@ -5,7 +5,7 @@ An open source inventory management system built with Nuxt 3 and PocketBase. Thi
 > **⚠️ Early Version Notice**  
 > OpenStock is currently in early development (v0.0.1). While the core features are functional, you may encounter bugs or incomplete features. We recommend using this for testing and development purposes only. Production use is not recommended at this time. Contributions and feedback are welcome!
 
-[![Demo](https://img.shields.io/badge/🌐_Live_Demo-stock.florianargaud.com-blue?style=for-the-badge)](https://streaming.florianargaud.com/)
+[![Demo](https://img.shields.io/badge/🌐_Live_Demo-stock.florianargaud.com-blue?style=for-the-badge)](https://openstock.florianargaud.com/)
 [![Built with Nuxt](https://img.shields.io/badge/Built_with-Nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js)](https://nuxt.com)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/folken)
 

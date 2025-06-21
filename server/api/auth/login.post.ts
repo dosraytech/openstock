@@ -1,10 +1,10 @@
-import PocketBase from 'pocketbase';
 import {
   authRateLimit,
   sanitizeInput,
   isValidEmail,
   secureLog,
 } from '../../utils/security';
+import { getPocketBase } from '../../utils/pocketbase';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    const pb = new PocketBase(process.env.BASE_URL);
+    const pb = getPocketBase();
 
     const authData = await pb
       .collection('users')
