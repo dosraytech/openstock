@@ -24,7 +24,7 @@
           </div>
           <div class="flex items-center space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/florianjs/openstock"
               class="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800"
             >
               <Icon name="simple-icons:github" class="h-5 w-5" />
