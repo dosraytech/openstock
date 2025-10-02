@@ -13,7 +13,7 @@
           </span>
         </div>
         <span class="hidden sm:block ml-2 text-gray-700">{{
-          user?.email || 'User'
+          user?.name || 'User'
         }}</span>
         <Icon
           name="heroicons:chevron-down"

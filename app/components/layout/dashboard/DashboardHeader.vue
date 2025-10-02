@@ -36,19 +36,6 @@
         </div>
 
         <div class="flex items-center space-x-3">
-          <!-- Quick Search -->
-          <div class="relative hidden md:block">
-            <Icon
-              name="heroicons:magnifying-glass"
-              class="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
-            />
-            <input
-              type="text"
-              placeholder="Quick search..."
-              class="pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm w-64 transition-all"
-            />
-          </div>
-
           <!-- Quick Actions -->
           <div class="flex items-center space-x-2">
             <!-- Notifications -->
@@ -56,7 +43,7 @@
               <button
                 class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-all duration-200 relative"
               >
-                <Icon name="heroicons:bell" class="h-5 w-5" />
+                <Icon name="heroicons:bell" class="h-5 w-5" :size="20"/>
                 <span
                   class="absolute -top-1 -right-1 h-4 w-4 bg-red-500 rounded-full flex items-center justify-center"
                 >
@@ -64,16 +51,6 @@
                 </span>
               </button>
             </div>
-
-            <!-- Settings -->
-            <button
-              class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-all duration-200"
-            >
-              <Icon name="heroicons:cog-6-tooth" class="h-5 w-5" />
-            </button>
-
-            <!-- Divider -->
-            <div class="h-6 w-px bg-gray-200"></div>
 
             <!-- User menu -->
             <LayoutDashboardUserMenu />

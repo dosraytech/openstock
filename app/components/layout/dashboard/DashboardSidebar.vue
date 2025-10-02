@@ -19,7 +19,7 @@
           <Icon name="heroicons:building-office-2" class="h-5 w-5 text-white" />
         </div>
         <div class="ml-2">
-          <span class="text-lg font-bold text-white">OpenStock</span>
+          <span class="text-lg font-bold text-white">Cloth Bird</span>
           <div class="text-xs text-indigo-200 font-medium">Dashboard</div>
         </div>
       </div>
@@ -74,36 +74,6 @@
           <h3
             class="text-xs font-semibold text-slate-400 uppercase tracking-wider"
           >
-            Quick Actions
-          </h3>
-        </div>
-        <div class="space-y-1">
-          <button
-            class="w-full flex items-center px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-all duration-200 group"
-          >
-            <Icon
-              name="heroicons:plus-circle"
-              class="h-4 w-4 mr-2.5 text-green-400 group-hover:scale-110 transition-transform"
-            />
-            Add New Contact
-          </button>
-          <button
-            class="w-full flex items-center px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-all duration-200 group"
-          >
-            <Icon
-              name="heroicons:document-plus"
-              class="h-4 w-4 mr-2.5 text-blue-400 group-hover:scale-110 transition-transform"
-            />
-            Create Deal
-          </button>
-        </div>
-      </div>
-
-      <div class="mt-6 pt-4 border-t border-slate-700/50">
-        <div class="px-3 mb-2">
-          <h3
-            class="text-xs font-semibold text-slate-400 uppercase tracking-wider"
-          >
             Settings
           </h3>
         </div>
@@ -131,28 +101,6 @@
           </NuxtLink>
         </div>
       </div>
-
-      <div class="mt-6 p-3">
-        <div
-          class="bg-gradient-to-r from-slate-800 to-slate-700 rounded-lg p-3 border border-slate-600/50"
-        >
-          <div class="flex items-center">
-            <div
-              class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center"
-            >
-              <Icon name="heroicons:user" class="h-4 w-4 text-white" />
-            </div>
-            <div class="ml-2.5 flex-1">
-              <div class="text-sm font-medium text-white">John Doe</div>
-              <div class="text-xs text-slate-400">Administrator</div>
-            </div>
-            <button class="text-slate-400 hover:text-white transition-colors">
-              <Icon name="heroicons:ellipsis-horizontal" class="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      </div>
-
       <div class="h-4"></div>
     </nav>
   </div>
@@ -187,44 +135,44 @@ onMounted(() => {
 
 const navigationItems: NavigationItem[] = [
   {
-    path: '/dashboard',
+    path: '/',
     label: 'Dashboard',
     icon: 'heroicons:home',
     isExact: true,
   },
   {
-    path: '/dashboard/todos',
+    path: '/todos',
     label: 'Todos',
     icon: 'heroicons:check-circle',
     badge: 5,
   },
   {
-    path: '/dashboard/contacts',
+    path: '/contacts',
     label: 'Contacts',
     icon: 'heroicons:users',
   },
   {
-    path: '/dashboard/deals',
+    path: '/deals',
     label: 'Deals',
     icon: 'heroicons:currency-dollar',
   },
   {
-    path: '/dashboard/categories',
+    path: '/categories',
     label: 'Categories',
     icon: 'heroicons:tag',
   },
   {
-    path: '/dashboard/inventory',
+    path: '/inventory',
     label: 'Inventory',
     icon: 'heroicons:cube',
   },
   {
-    path: '/dashboard/suppliers',
+    path: '/suppliers',
     label: 'Suppliers',
     icon: 'heroicons:truck',
   },
   {
-    path: '/dashboard/analytics',
+    path: '/analytics',
     label: 'Analytics',
     icon: 'heroicons:chart-bar',
   },
@@ -232,12 +180,12 @@ const navigationItems: NavigationItem[] = [
 
 const settingsItems: NavigationItem[] = [
   {
-    path: '/dashboard/profile',
+    path: '/profile',
     label: 'Profile',
     icon: 'heroicons:user-circle',
   },
   {
-    path: '/dashboard/settings',
+    path: '/settings',
     label: 'Settings',
     icon: 'heroicons:cog-6-tooth',
   },

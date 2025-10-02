@@ -9,7 +9,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     try {
       const isValid = await checkAuth();
       if (isValid) {
-        return navigateTo('/dashboard');
+        return navigateTo('/');
       }
     } catch (error) {
       // User is not authenticated, allow access to guest routes
@@ -17,6 +17,6 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     }
   } else {
     // User is already authenticated, redirect to dashboard
-    return navigateTo('/dashboard');
+    return navigateTo('/');
   }
 });

@@ -5,18 +5,11 @@
     <div class="max-w-md w-full space-y-8">
       <!-- Logo and Header -->
       <div class="text-center">
-        <div class="flex items-center justify-center mb-6">
-          <Icon
-            name="heroicons:building-office-2"
-            class="h-12 w-12 text-indigo-600"
-          />
-          <span class="ml-2 text-2xl font-bold text-gray-900">OpenStock</span>
-        </div>
         <h2 class="text-3xl font-bold text-gray-900">
-          Sign in to your account
+          Cloth Bird
         </h2>
         <p class="mt-2 text-sm text-gray-600">
-          Access your inventory dashboard
+          Access your shops admin panel here
         </p>
       </div>
 
@@ -136,37 +129,7 @@
             </button>
           </div>
         </form>
-
-        <div class="mt-6 text-center">
-          <NuxtLink
-            to="/"
-            class="text-indigo-600 hover:text-indigo-500 text-sm font-medium"
-          >
-            ← Back to home
-          </NuxtLink>
-        </div>
-      </div>
-
-      <!-- Demo Credentials -->
-      <div class="bg-yellow-50 border border-yellow-200 rounded-md p-4">
-        <div class="flex">
-          <Icon
-            name="heroicons:information-circle"
-            class="h-5 w-5 text-yellow-400"
-          />
-          <div class="ml-3">
-            <h3 class="text-sm font-medium text-yellow-800">
-              Demo Credentials
-            </h3>
-            <div class="mt-2 text-xs text-yellow-700">
-              <p>
-                This is a demo. Contact your administrator for login
-                credentials.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div>      
     </div>
   </div>
 </template>
@@ -214,7 +177,7 @@ const handleLogin = async () => {
 
   try {
     await login(form.value.email, form.value.password);
-    await navigateTo('/dashboard');
+    await navigateTo('/');
   } catch (err: any) {
     error.value = err.message || 'Login failed. Please check your credentials.';
   } finally {

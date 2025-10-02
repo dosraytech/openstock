@@ -16,7 +16,7 @@ export const useDashboardLayout = () => {
     if (!isClientSide.value) return 'Dashboard';
 
     const titles: Record<string, string> = {
-      '/dashboard': 'Dashboard',
+      '/': 'Dashboard',
       '/dashboard/contacts': 'Contacts',
       '/dashboard/deals': 'Deals',
       '/dashboard/analytics': 'Analytics',
