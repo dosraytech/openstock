@@ -15,6 +15,20 @@
           </p>
         </div>
         <div class="flex items-center space-x-4">
+          <!-- Filter Dropdown -->
+          <select
+            v-model="selectedShop"
+            class="px-3 py-2 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+          >
+            <option value="">All Categories</option>
+            <option
+              v-for="shop in shops"
+              :key="shop.id"
+              :value="shop.id"
+            >
+              {{ shop.name }}
+            </option>
+          </select>
           <!-- Quick Search -->
           <div class="relative">
             <Icon
@@ -95,8 +109,13 @@ useHead({
 });
 
 // Use dashboard composable for data
-const { stats, recentActivity, upcomingTasks, inventoryCategories } =
-  useDashboard();
+const { stats } = useDashboard();
+
+// Shop Interface
+interface Shop {
+  id: string;
+  name: string;
+}
 
 // Todo interface
 interface Todo {
@@ -112,8 +131,25 @@ interface Todo {
 }
 
 // Real todos data from API
+const shops = ref<Shop[]>([]);
 const todos = ref<Todo[]>([]);
 const loading = ref(false);
+
+const selectedShop = ref('');
+
+// Fetch todos from API
+const fetchShops = async () => {
+  try {
+    loading.value = true;
+    const data = await $fetch<Shop[]>('/api/shops');
+    shops.value = data || [];
+  } catch (error) {
+    console.error('Failed to fetch todos:', error);
+    todos.value = [];
+  } finally {
+    loading.value = false;
+  }
+};
 
 // Fetch todos from API
 const fetchTodos = async () => {
@@ -133,58 +169,8 @@ const fetchTodos = async () => {
 if (import.meta.client) {
   onMounted(() => {
     fetchTodos();
+    fetchShops();
   });
 }
 
-// Todo handler methods
-const handleToggleTodo = async (id: string) => {
-  try {
-    const todo = todos.value?.find((t) => t.id === id);
-    if (!todo) return;
-
-    const updatedTodo = await $fetch<Todo>(`/api/todos/${id}`, {
-      method: 'PUT',
-      body: {
-        ...todo,
-        completed: !todo.completed,
-      },
-    });
-
-    // Update local state
-    const index = todos.value?.findIndex((t) => t.id === id);
-    if (index !== undefined && index > -1 && todos.value) {
-      todos.value[index] = updatedTodo;
-    }
-  } catch (error) {
-    console.error('Failed to toggle todo:', error);
-  }
-};
-
-const handleEditTodo = (todo: Todo) => {
-  // Navigate to todos page with edit mode
-  navigateTo(`/dashboard/todos?edit=${todo.id}`);
-};
-
-const handleDeleteTodo = async (id: string) => {
-  if (confirm('Are you sure you want to delete this todo?')) {
-    try {
-      await $fetch(`/api/todos/${id}`, {
-        method: 'DELETE',
-      });
-
-      // Remove from local state
-      const index = todos.value?.findIndex((t) => t.id === id);
-      if (index !== undefined && index > -1 && todos.value) {
-        todos.value.splice(index, 1);
-      }
-    } catch (error) {
-      console.error('Failed to delete todo:', error);
-    }
-  }
-};
-
-const handleAddTodo = () => {
-  // Navigate to todos page
-  navigateTo('/dashboard/todos');
-};
 </script>
