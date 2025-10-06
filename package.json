@@ -12,9 +12,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npx nuxi build --preset=cloudflare_pages",
-    "deploy": "npx wrangler pages deploy dist",
+    "build": "nuxt build",
     "dev": "nuxt dev",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
