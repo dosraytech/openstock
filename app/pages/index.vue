@@ -20,7 +20,7 @@
             v-model="selectedShop"
             class="px-3 py-2 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
           >
-            <option value="">All Categories</option>
+            <option value="">All Shops</option>
             <option
               v-for="shop in shops"
               :key="shop.id"
@@ -98,12 +98,12 @@ definePageMeta({
 
 // Set page meta
 useHead({
-  title: 'Dashboard - Inventory Management',
+  title: 'Dashboard - Cloth Bird',
   meta: [
     {
       name: 'description',
       content:
-        'Inventory management dashboard with stock overview, suppliers, and analytics.',
+        'Cloth bird dashboard with orders overview, payment, and expenses.',
     },
   ],
 });
@@ -117,49 +117,26 @@ interface Shop {
   name: string;
 }
 
-// Todo interface
-interface Todo {
-  id: string;
-  title: string;
-  description: string;
-  completed: boolean;
-  dueDate: string;
-  priority: 'low' | 'medium' | 'high';
-  category: string;
-  created: string;
-  updated: string;
-}
-
 // Real todos data from API
 const shops = ref<Shop[]>([]);
-const todos = ref<Todo[]>([]);
 const loading = ref(false);
-
 const selectedShop = ref('');
 
-// Fetch todos from API
+const { user } = useAuthStore();
+
+// Fetch shops from API
 const fetchShops = async () => {
   try {
     loading.value = true;
-    const data = await $fetch<Shop[]>('/api/shops');
+    const data = await $fetch<Shop[]>("/api/shops", {
+      params: {
+        user: user?.id || "",
+      },
+    });
     shops.value = data || [];
   } catch (error) {
-    console.error('Failed to fetch todos:', error);
-    todos.value = [];
-  } finally {
-    loading.value = false;
-  }
-};
-
-// Fetch todos from API
-const fetchTodos = async () => {
-  try {
-    loading.value = true;
-    const data = await $fetch<Todo[]>('/api/todos');
-    todos.value = data || [];
-  } catch (error) {
-    console.error('Failed to fetch todos:', error);
-    todos.value = [];
+    console.error("Failed to fetch shops:", error);
+    shops.value = [];
   } finally {
     loading.value = false;
   }
@@ -168,7 +145,6 @@ const fetchTodos = async () => {
 // Use import.meta.client to ensure this only runs on client side
 if (import.meta.client) {
   onMounted(() => {
-    // fetchTodos();
     fetchShops();
   });
 }

@@ -513,7 +513,7 @@ const fetchShops = async () => {
     });
     shops.value = data || [];
   } catch (error) {
-    console.error("Failed to fetch todos:", error);
+    console.error("Failed to fetch shops:", error);
     shops.value = [];
   } finally {
     loading.value = false;

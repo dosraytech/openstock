@@ -7,10 +7,10 @@
       <div class="flex items-center justify-between">
         <div>
           <h3 class="text-lg font-bold text-gray-900 mb-1">
-            Stock Levels Overview
+            Orders Chart
           </h3>
           <p class="text-sm text-gray-500">
-            Monthly inventory trends and forecasting
+            Daily Orders Overview
           </p>
         </div>
         <div class="flex items-center space-x-3">
@@ -119,15 +119,15 @@
         <div class="flex items-center space-x-6">
           <div class="flex items-center space-x-2">
             <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <span class="text-sm text-gray-600">In Stock</span>
+            <span class="text-sm text-gray-600">Orders</span>
           </div>
           <div class="flex items-center space-x-2">
             <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <span class="text-sm text-gray-600">Low Stock</span>
+            <span class="text-sm text-gray-600">Paid</span>
           </div>
           <div class="flex items-center space-x-2">
             <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-            <span class="text-sm text-gray-600">Out of Stock</span>
+            <span class="text-sm text-gray-600">Due</span>
           </div>
         </div>
         <div class="text-right">

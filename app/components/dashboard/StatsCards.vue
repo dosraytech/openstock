@@ -25,7 +25,7 @@
         </div>
         <div class="space-y-1">
           <p class="text-sm font-medium text-blue-600 uppercase tracking-wider">
-            Total Products
+            Total Orders
           </p>
           <p class="text-3xl font-bold text-gray-900">
             {{ stats.totalProducts }}
@@ -68,10 +68,10 @@
         </div>
         <div class="space-y-1">
           <p class="text-sm font-medium text-red-600 uppercase tracking-wider">
-            Low Stock Items
+            Expenses
           </p>
           <p class="text-3xl font-bold text-gray-900">
-            {{ stats.lowStockItems }}
+            $ 350.00
           </p>
           <div class="w-full bg-red-200 rounded-full h-1.5">
             <div class="bg-red-500 h-1.5 rounded-full" style="width: 45%"></div>
@@ -107,10 +107,10 @@
           <p
             class="text-sm font-medium text-green-600 uppercase tracking-wider"
           >
-            Inventory Value
+            Total Earn
           </p>
           <p class="text-3xl font-bold text-gray-900">
-            €{{ stats.totalValue.toLocaleString() }}
+            $ 1,230.00
           </p>
           <div class="w-full bg-green-200 rounded-full h-1.5">
             <div
@@ -149,10 +149,10 @@
           <p
             class="text-sm font-medium text-orange-600 uppercase tracking-wider"
           >
-            Pending Orders
+            Deliveries
           </p>
           <p class="text-3xl font-bold text-gray-900">
-            {{ stats.pendingOrders }}
+            18
           </p>
           <div class="w-full bg-orange-200 rounded-full h-1.5">
             <div

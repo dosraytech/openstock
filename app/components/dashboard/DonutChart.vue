@@ -6,9 +6,9 @@
       <div class="flex items-center justify-between">
         <div>
           <h3 class="text-lg font-bold text-gray-900 mb-1">
-            Category Distribution
+            Services Category
           </h3>
-          <p class="text-sm text-gray-500">Inventory breakdown by category</p>
+          <p class="text-sm text-gray-500">Orders by services category</p>
         </div>
         <div class="p-2 bg-purple-50 rounded-lg">
           <Icon name="heroicons:chart-pie" class="h-5 w-5 text-purple-600" />
@@ -62,11 +62,11 @@
 <script setup lang="ts">
 // @ts-nocheck
 const categories = [
-  'Electronics',
-  'Clothing',
-  'Books',
-  'Home & Garden',
-  'Sports',
+  'Wash & Iron',
+  'Wash & Fold',
+  'Dry Cleaning',
+  'Self Service',
+  'Wash by hand',
   'Toys',
 ];
 const chartSeries = [125, 89, 67, 45, 32, 28];

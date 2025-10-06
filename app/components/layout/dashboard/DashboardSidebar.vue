@@ -143,47 +143,38 @@ const navigationItems: NavigationItem[] = [
   {
     path: '/orders',
     label: 'Orders',
-    icon: 'heroicons:users',
+    icon: 'heroicons:shopping-bag',
+    badge: 2,
   },
   {
-    path: '/todos',
-    label: 'Todos',
-    icon: 'heroicons:check-circle',
-    badge: 5,
+    path: '/services',
+    label: 'Services',
+    icon: 'heroicons:briefcase',
   },
   {
-    path: '/contacts',
-    label: 'Contacts',
-    icon: 'heroicons:users',
+    path: '/coupons',
+    label: 'Coupons',
+    icon: 'heroicons:ticket',
   },
   {
-    path: '/deals',
-    label: 'Deals',
-    icon: 'heroicons:currency-dollar',
+    path: '/expenses',
+    label: 'Expenses',
+    icon: 'heroicons:credit-card',
   },
   {
-    path: '/categories',
-    label: 'Categories',
-    icon: 'heroicons:tag',
-  },
-  {
-    path: '/inventory',
-    label: 'Inventory',
-    icon: 'heroicons:cube',
-  },
-  {
-    path: '/suppliers',
-    label: 'Suppliers',
+    path: '/deliveries',
+    label: 'Deliveries',
     icon: 'heroicons:truck',
-  },
-  {
-    path: '/analytics',
-    label: 'Analytics',
-    icon: 'heroicons:chart-bar',
+    badge: 5,
   },
 ];
 
 const settingsItems: NavigationItem[] = [
+  {
+    path: '/reports',
+    label: 'Reports',
+    icon: 'heroicons:chart-pie',
+  },
   {
     path: '/profile',
     label: 'Profile',

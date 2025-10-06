@@ -68,25 +68,25 @@
           <span class="text-xs font-medium text-gray-600">Quick Access:</span>
           <div class="flex items-center space-x-2">
             <NuxtLink
-              to="/dashboard/todos"
+              to="/orders"
               class="inline-flex items-center px-3 py-1 bg-white border border-gray-200 rounded-md text-xs font-medium text-gray-700 hover:bg-gray-50 hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
             >
               <Icon name="heroicons:check-circle" class="h-3 w-3 mr-1" />
-              Todos
+              Orders
             </NuxtLink>
             <NuxtLink
-              to="/dashboard/contacts"
+              to="/deliveries"
               class="inline-flex items-center px-3 py-1 bg-white border border-gray-200 rounded-md text-xs font-medium text-gray-700 hover:bg-gray-50 hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
             >
               <Icon name="heroicons:users" class="h-3 w-3 mr-1" />
-              Contacts
+              Deliveries
             </NuxtLink>
             <NuxtLink
-              to="/dashboard/deals"
+              to="/reports"
               class="inline-flex items-center px-3 py-1 bg-white border border-gray-200 rounded-md text-xs font-medium text-gray-700 hover:bg-gray-50 hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
             >
               <Icon name="heroicons:currency-dollar" class="h-3 w-3 mr-1" />
-              Deals
+              Reports
             </NuxtLink>
           </div>
         </div>
