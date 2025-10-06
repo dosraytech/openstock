@@ -168,7 +168,7 @@ const fetchTodos = async () => {
 // Use import.meta.client to ensure this only runs on client side
 if (import.meta.client) {
   onMounted(() => {
-    fetchTodos();
+    // fetchTodos();
     fetchShops();
   });
 }

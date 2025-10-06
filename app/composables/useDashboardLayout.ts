@@ -17,6 +17,7 @@ export const useDashboardLayout = () => {
 
     const titles: Record<string, string> = {
       '/': 'Dashboard',
+      '/dashboard/orders': 'Orders',
       '/dashboard/contacts': 'Contacts',
       '/dashboard/deals': 'Deals',
       '/dashboard/analytics': 'Analytics',

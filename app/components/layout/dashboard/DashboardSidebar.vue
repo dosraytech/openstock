@@ -141,6 +141,11 @@ const navigationItems: NavigationItem[] = [
     isExact: true,
   },
   {
+    path: '/orders',
+    label: 'Orders',
+    icon: 'heroicons:users',
+  },
+  {
     path: '/todos',
     label: 'Todos',
     icon: 'heroicons:check-circle',
