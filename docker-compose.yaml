@@ -1,26 +1,15 @@
-version: '3.8' # Specify the Docker Compose file format version
-
 services:
-  # Define the main service for your application
   web:
-    # Use 'build' to tell Docker Compose to look for a Dockerfile in the current directory ('.')
-    build: .
-    
-    # Assign a custom name to the container for easier reference
+    build:
+      context: .
+      args:
+        - BASE_URL=https://clothbird.reankhode.com
     container_name: clothbird_front
-    
-    # Map a port on your host machine (80) to the port the application runs on inside the container (e.g., 8080)
-    # **Change 8080 to the actual port your app uses!**
     ports:
-      - "3001:3000" 
-
+      - "3001:3000"
+    # You still need this for the runtime container
     environment:
       - BASE_URL=https://clothbird.reankhode.com
-      
-    # Mount the current directory into the container. 
-    # This is great for development as code changes on your host are reflected instantly in the container.
     volumes:
       - .:/usr/src/app
-      
-    # Set the restart policy
     restart: always
