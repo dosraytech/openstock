@@ -27,9 +27,6 @@ FROM node:20-alpine
 # Set the working directory
 WORKDIR /app
 
-# Set the environment to production
-ENV NODE_ENV=production
-
 # Copy the built output from the 'builder' stage
 # Nuxt 3 builds the application into the '.output' directory
 COPY --from=builder /app/.output .
