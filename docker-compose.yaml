@@ -14,10 +14,5 @@ services:
     ports:
       - "3001:3000" 
       
-    # Mount the current directory into the container. 
-    # This is great for development as code changes on your host are reflected instantly in the container.
-    volumes:
-      - .:/usr/src/app
-      
     # Set the restart policy
     restart: always
