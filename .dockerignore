@@ -1,0 +1,20 @@
+# Git
+.git
+.gitignore
+
+# Local dependencies
+node_modules
+
+# Nuxt build outputs & caches
+.output
+.nuxt
+dist
+
+# Environment files
+.env
+*.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
